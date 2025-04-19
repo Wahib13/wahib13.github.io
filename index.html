@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -64,13 +66,15 @@
                 loading="lazy"
               />
             </div>
+            {% for project in site.projects %}
             <div class="projects__row-content">
-              <h3 class="projects__row-content-title">ETL Pipeline</h3>
+              <h3 class="projects__row-content-title">{{ project.name }}</h3>
               <p class="projects__row-content-desc">
-                An ETL pipeline that extracts data from various sources (e.g., APIs, databases), transforms it into a suitable format, and loads it into a database
+                {{ project.content | strip_html }}
               </p>
               <a class='btn btn--med btn--theme dynamicBgClr' href='#' target='_blank'>Learn more</a>
             </div>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -107,6 +111,6 @@
       </div>
     </footer>
 
-  </body>
+  </obql>
 </html>
 
