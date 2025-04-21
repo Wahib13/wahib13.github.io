@@ -1,5 +1,4 @@
----
----
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -63,68 +62,63 @@
         </div>
       </div>
     </header>
-    <section class="home-hero">
-      <div class="home-hero__content">
-        <h1 class="heading-primary">Hi, I'm Wahib Farhat</h1>
-        <div class="home-hero__info">
+    <section class="project-cs-hero">
+      <div class="project-cs-hero__content">
+          <h1 class="heading-primary">{{ page.name }}</h1>
+        <div class="project-cs-hero__info">
           <p class="text-primary">
-            A backend developer and data engineer. I build apps and data pipelines.
+            {{ content | strip_html }}
           </p>
         </div>
-        <div class="home-hero__cta">
-          <a href="/#projects" class="btn btn--bg">Projects</a>
+        <div class="project-cs-hero__cta">
+          <a href="#" class="btn btn--bg" target="_blank">Live Link</a>
         </div>
       </div>
-      <div class="home-hero__socials">
-        <div class="home-hero__social">
-          <a
-            href="https://github.com/wahib13"
-            class="home-hero__social-icon-link"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <img
-              src="/assets/svg/github-dark.svg"
-              alt="Wahib Github Profile"
-              class="home-hero__social-icon"
-            />
-          </a>
-        </div>
-    </div>
     </section>
-    <section id="projects" class="projects sec-pad">
+    <section class="project-details">
       <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-bg">
-          <span class="heading-sec__main">Projects</span>
-          <span class="heading-sec__sub">
-            Here you will find the list of projects I am currently working on
-          </span>
-        </h2>
-
-        <div class="projects__content">
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img
-                src="/assets/images/project-mockup-example.jpeg"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-            {% for project in site.projects %}
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">{{ project.name }}</h3>
-              <p class="projects__row-content-desc">
-                {{ project.content | strip_html }}
+        <div class="project-details__content">
+          <div class="project-details__showcase-img-cont">
+            <img
+              src="/assets/images/project-mockup-example.jpeg"
+              alt="Project Image"
+              class="project-details__showcase-img"
+            />
+          </div>
+          <div class="project-details__content-main">
+            <div class="project-details__desc">
+              <h3 class="project-details__content-title">Project Overview</h3>
+              <p class="project-details__desc-para">
+                {{ content | strip_html }}
               </p>
-              <a class='btn btn--med btn--theme dynamicBgClr' href={{ project.link }} target='_blank'>Learn more</a>
             </div>
-            {% endfor %}
+            <div class="project-details__tools-used">
+              <h3 class="project-details__content-title">Tools Used</h3>
+              <div class="skills">
+                {% for skill in page.skills %}
+                    <div class="skills__skill">{{ skill }}</div>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="project-details__links">
+              <h3 class="project-details__content-title">See Live</h3>
+              <a
+                href="{{page.live_link}}"
+                class="btn btn--med btn--theme project-details__links-btn"
+                target="_blank"
+                >Live Link</a
+              >
+              <a
+                href="{{page.project_link}}"
+                class="btn btn--med btn--theme-inv project-details__links-btn"
+                target="_blank"
+                >Code Link</a
+              >
+            </div>
           </div>
         </div>
       </div>
     </section>
-
     <footer class="main-footer">
       <div class="main-container">
         <div class="main-footer__upper">
@@ -156,7 +150,6 @@
       </div>
     </footer>
 
-    <script src="/assets/js/index.js"></script>
-  </obql>
+  </body>
 </html>
 
