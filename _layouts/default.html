@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }} · Backend Developer{% endif %}</title>
+    <meta name="description" content="{{ page.summary | default: site.description }}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a href="/" class="site-header__name">
+        <span class="site-header__prompt">~/</span>wahib
+      </a>
+      <nav class="site-header__nav">
+        <a href="/#work">Work</a>
+        <a href="/#projects">Projects</a>
+        <a href="/CV_Wahib_Farhat.pdf" target="_blank" rel="noreferrer">CV</a>
+        <a href="https://github.com/wahib13" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__row">
+        <span>&copy; {{ site.time | date: "%Y" }} Wahib Farhat</span>
+        <span class="site-footer__links">
+          <a href="mailto:wahibfarhat13@gmail.com">Email</a>
+          <a href="https://github.com/wahib13" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/wahib-farhat" target="_blank" rel="noreferrer">LinkedIn</a>
+        </span>
+      </div>
+      <p class="site-footer__note">
+        Static site, built with Jekyll, served from GitHub Pages. No trackers, no JavaScript.
+      </p>
+    </footer>
+  </body>
+</html>
