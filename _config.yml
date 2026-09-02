@@ -1,3 +1,20 @@
+title: Wahib Farhat
+description: Backend software engineer in Clausthal-Zellerfeld, Germany. REST APIs, systems integration, event-driven data pipelines and digital twins.
+url: https://www.wahib.dev
+
 collections:
   projects:
     output: true
+    permalink: /projects/:name.html
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
